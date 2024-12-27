@@ -77,7 +77,7 @@ mv img4tool ~/.tools
 cd ../..
 
 echo -e "\033[32mCloning ipwnder_lite...\033[0m"
-git clone https://github.com/dora2ios/ipwnder_lite.git temp/ipwnder_lite
+git clone --recursive https://github.com/dora2ios/ipwnder_lite.git temp/ipwnder_lite
 
 echo -e "\033[32mBuilding ipwnder_lite...\033[0m"
 cd temp/ipwnder_lite

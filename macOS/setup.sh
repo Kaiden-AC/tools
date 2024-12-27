@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\033[34mWould you like to proceed installing dmgtool, gaster, hfsplus, iBoot32Patcher, img4lib, img4tool, ipwnder_lite, kairos, libgeneral, libpartialzip, partialZipBrowser, sepless, seprmvr64, seprmvr64lite, tsschecker and xpwntool? (y/n)\033[0m"
+echo -e "\033[34mWould you like to proceed installing dmgtool, gaster, hfsplus, iBoot32Patcher, img4lib, img4tool, ipwnder_lite, libirecovery, kairos, libgeneral, libpartialzip, partialZipBrowser, sepless, seprmvr64, seprmvr64lite, tsschecker and xpwntool? (y/n)\033[0m"
 read -r response
 if [[ "$response" != "y" ]]; then
     echo "Installation aborted."
@@ -9,6 +9,9 @@ fi
 
 mkdir ~/.tools
 mkdir temp
+
+echo -e "\033[32mInstalling dependencies...\033[0m"
+brew install libpng libplist openssl
 
 echo -e "\033[32mCloning xpwn...\033[0m"
 git clone https://github.com/Kaiden-AC/xpwn.git temp/xpwn
@@ -79,6 +82,9 @@ cd temp/ipwnder_lite
 make
 mv ipwnder_macosx ~/.tools
 cd ../..
+
+echo -e "\033[32mInstalling libirecovery...\033[0m"
+brew install libirecovery
 
 echo -e "\033[32mCloning kairos...\033[0m"
 git clone https://github.com/dayt0n/kairos.git temp/kairos

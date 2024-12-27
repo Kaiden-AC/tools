@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo -e "\033[34mWould you like to proceed installing dmgtool, gaster, hfsplus, iBoot32Patcher, img4lib, img4tool, ipwnder_lite, libirecovery, kairos, libgeneral, libpartialzip, partialZipBrowser, sepless, seprmvr64, seprmvr64lite, tsschecker and xpwntool? (y/n)\033[0m"
 read -r response
 if [[ "$response" != "y" ]]; then

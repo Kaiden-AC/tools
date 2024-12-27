@@ -11,7 +11,7 @@ mkdir ~/.tools
 mkdir temp
 
 echo -e "\033[32mInstalling dependencies...\033[0m"
-brew install libpng libplist openssl
+brew install libcrippy libpng libplist openssl
 
 echo -e "\033[32mCloning xpwn...\033[0m"
 git clone https://github.com/Kaiden-AC/xpwn.git temp/xpwn
@@ -44,7 +44,7 @@ mv iBoot32Patcher ~/.tools
 cd ../..
 
 echo -e "\033[32mCloning img4lib...\033[0m"
-git clone https://github.com/xerub/img4lib.git temp/img4lib
+git clone --recursive https://github.com/xerub/img4lib.git temp/img4lib
 
 echo -e "\033[32mBuilding img4lib...\033[0m"
 cd temp/img4lib/lzfse
@@ -110,6 +110,7 @@ git clone https://github.com/tihmstar/partialZipBrowser.git temp/partialZipBrows
 
 echo -e "\033[32mBuilding partialZipBrowser...\033[0m"
 cd temp/partialZipBrowser
+./autogen.sh
 make
 sudo make install
 cd ../..
@@ -124,7 +125,7 @@ mv sepless ~/.tools
 cd ../..
 
 echo -e "\033[32mCloning seprmvr64...\033[0m"
-git clone https://github.com/mineek/seprmvr64.git temp/seprmvr64
+git clone --recursive https://github.com/mineek/seprmvr64.git temp/seprmvr64
 
 echo -e "\033[32mBuilding seprmvr64...\033[0m"
 cd temp/seprmvr64
@@ -133,8 +134,8 @@ mv seprmvr64 ~/.tools
 cd ../..
 
 echo -e "\033[32mFetching seprmvr64lite...\033[0m"
-curl -L https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/patchfinder64.c -o temp/seprmvr64lite/patchfinder64.c
-curl -L https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/seprmvr64lite.c -o temp/seprmvr64lite/seprmvr64lite.c
+curl -O https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/patchfinder64.c
+curl -O https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/seprmvr64lite.c
 
 echo -e "\033[32mBuilding seprmvr64lite...\033[0m"
 cd temp/seprmvr64lite

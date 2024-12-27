@@ -2,7 +2,7 @@
 
 set -e
 
-echo -e "\033[34mWould you like to proceed installing dmgtool, gaster, hfsplus, iBoot32Patcher, img4lib, img4tool, ipwnder_lite, libirecovery, kairos, libgeneral, libpartialzip, partialZipBrowser, sepless, seprmvr64, seprmvr64lite, tsschecker and xpwntool? (y/n)\033[0m"
+echo -e "\033[34mWould you like to proceed installing dmgtool, gaster, hfsplus, iBoot32Patcher, img4lib, img4tool, ipwnder_lite, libirecovery, kairos, libgeneral, libcrippy, libpartialzip, partialZipBrowser, sepless, seprmvr64, seprmvr64lite, tsschecker and xpwntool? (y/n)\033[0m"
 read -r response
 if [[ "$response" != "y" ]]; then
     echo "Installation aborted."
@@ -13,7 +13,7 @@ mkdir ~/.tools
 mkdir temp
 
 echo -e "\033[32mInstalling dependencies...\033[0m"
-brew install libcrippy libpng libplist openssl
+brew install libpng libplist openssl
 
 echo -e "\033[32mCloning xpwn...\033[0m"
 git clone https://github.com/Kaiden-AC/xpwn.git temp/xpwn
@@ -95,6 +95,16 @@ echo -e "\033[32mBuilding kairos...\033[0m"
 cd temp/kairos
 make
 mv kairos ~/.tools
+cd ../..
+
+echo -e "\033[32mCloning libcrippy...\033[0m"
+git clone https://github.com/tihmstar/libcrippy.git temp/libcrippy
+
+echo -e "\033[32mBuilding libcrippy...\033[0m"
+cd temp/libcrippy
+./autogen.sh
+make
+sudo make install
 cd ../..
 
 echo -e "\033[32mCloning libpartialzip...\033[0m"

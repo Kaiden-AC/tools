@@ -220,7 +220,7 @@ cd ../..
 # cd ../..
 
 echo -e "\033[32mAdding ~/.tools to system path...\033[0m"
-sudo echo "/Users/$(whoami)/.tools" >> /etc/paths.d/tools
+echo "/Users/$(whoami)/.tools" | sudo tee -a /etc/paths.d/tools > /dev/null
 
 echo -e "\033[32mCleaning up temporary files...\033[0m"
 rm -rf temp

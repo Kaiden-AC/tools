@@ -93,7 +93,7 @@ git clone https://github.com/dora2ios/iBoot32Patcher.git temp/iBoot32Patcher
 
 echo -e "\033[32mBuilding iBoot32Patcher...\033[0m"
 cd temp/iBoot32Patcher
-gcc iBoot32Patcher.c finders.c functions.c patchers.c -Wno-multichar -I. -o iBoot32Patcher
+clang iBoot32Patcher.c finders.c functions.c patchers.c -Wno-multichar -I. -o iBoot32Patcher
 mv iBoot32Patcher ~/.tools
 cd ../..
 
@@ -184,7 +184,7 @@ git clone https://github.com/Kaiden-AC/sepless.git temp/sepless
 
 echo -e "\033[32mBuilding sepless...\033[0m"
 cd temp/sepless
-gcc src/sepless.c -o sepless
+clang src/sepless.c -o sepless
 mv sepless ~/.tools
 cd ../..
 
@@ -201,11 +201,11 @@ cd ../..
 echo -e "\033[32mFetching seprmvr64lite...\033[0m"
 mkdir temp/seprmvr64lite
 cd temp/seprmvr64lite
-curl -O https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/patchfinder64.c
-curl -O https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/seprmvr64lite.c
+curl -LO https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/patchfinder64.c
+curl -LO https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/seprmvr64lite.c
 
 echo -e "\033[32mBuilding seprmvr64lite...\033[0m"
-gcc seprmvr64lite.c -o seprmvr64lite
+clng seprmvr64lite.c -o seprmvr64lite
 mv seprmvr64lite ~/.tools
 cd ../..
 

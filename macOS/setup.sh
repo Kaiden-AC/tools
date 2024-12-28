@@ -193,7 +193,7 @@ git clone --recursive https://github.com/mineek/seprmvr64.git temp/seprmvr64
 
 echo -e "\033[32mBuilding seprmvr64...\033[0m"
 cd temp/seprmvr64
-sed -i 's/-fuse-ld=lld/-B\/usr\/bin\/ld.lld/' Makefile
+sed -i '' 's/-fuse-ld=lld/-B\/usr\/bin\/ld.lld/' Makefile
 make
 mv seprmvr64 ~/.tools
 cd ../..

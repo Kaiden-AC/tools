@@ -2,9 +2,9 @@
 set -e
 
 if [ "$1" == "--uninstall" ]; then
-    echo -e "\033[32mUninstalling libgeneral...\033[0m"
-    git clone https://github.com/tihmstar/libgeneral.git temp/libgeneral
-    cd temp/libgeneral
+    echo -e "\033[32mUninstalling tsschecker...\033[0m"
+    git clone --recursive https://github.com/tihmstar/tsschecker.git temp/tsschecker
+    cd temp/tsschecker
     ./autogen.sh
     make
     sudo make uninstall
@@ -26,9 +26,9 @@ if [ "$1" == "--uninstall" ]; then
     sudo make uninstall
     cd ../..
 
-    echo -e "\033[32mUninstalling tsschecker...\033[0m"
-    git clone --recursive https://github.com/tihmstar/tsschecker.git temp/tsschecker
-    cd temp/tsschecker
+    echo -e "\033[32mUninstalling libgeneral...\033[0m"
+    git clone https://github.com/tihmstar/libgeneral.git temp/libgeneral
+    cd temp/libgeneral
     ./autogen.sh
     make
     sudo make uninstall
@@ -37,6 +37,9 @@ if [ "$1" == "--uninstall" ]; then
     echo -e "\033[32mRemoving ~/.tools and /etc/paths.d/tools...\033[0m"
     rm -rf ~/.tools
     sudo rm -f /etc/paths.d/tools
+
+    echo -e "\033[32mCleaning up temporary files...\033[0m"
+    rm -rf temp
 
     echo -e "\033[32mUninstallation complete!\033[0m"
     exit 0
@@ -200,5 +203,8 @@ cd ../..
 
 echo -e "\033[32mAdding ~/.tools to system path...\033[0m"
 sudo echo "/Users/$(whoami)/.tools" >> /etc/paths.d/tools
+
+echo -e "\033[32mCleaning up temporary files...\033[0m"
+rm -rf temp
 
 echo -e "\033[32mFinished!\033[0m"

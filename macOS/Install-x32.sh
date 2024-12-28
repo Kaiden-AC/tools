@@ -16,9 +16,6 @@ fi
 mkdir ~/.tools
 mkdir temp
 
-echo -e "\033[32mInstalling dependencies...\033[0m"
-brew install libpng libplist openssl
-
 echo -e "\033[32mCloning xpwn...\033[0m"
 git clone https://github.com/Kaiden-AC/xpwn.git temp/xpwn
 
@@ -38,6 +35,15 @@ echo -e "\033[32mBuilding iBoot32Patcher...\033[0m"
 cd temp/iBoot32Patcher
 clang iBoot32Patcher.c finders.c functions.c patchers.c -Wno-multichar -I. -o iBoot32Patcher
 mv iBoot32Patcher ~/.tools
+cd ../..
+
+echo -e "\033[32mCloning image3maker...\033[0m"
+git clone https://github.com/darwin-on-arm/image3maker.git temp/image3maker
+
+echo -e "\033[32mBuilding image3maker...\033[0m"
+cd temp/image3maker
+make
+mv image3maker ~/.tools
 cd ../..
 
 echo -e "\033[32mCloning ipwnder_lite...\033[0m"

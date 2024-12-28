@@ -1,6 +1,46 @@
 #!/bin/bash
-
 set -e
+
+if [ "$1" == "--uninstall" ]; then
+    echo -e "\033[32mUninstalling libgeneral...\033[0m"
+    git clone https://github.com/tihmstar/libgeneral.git temp/libgeneral
+    cd temp/libgeneral
+    ./autogen.sh
+    make
+    sudo make uninstall
+    cd ../..
+
+    echo -e "\033[32mUninstalling img4tool...\033[0m"
+    git clone https://github.com/tihmstar/img4tool.git temp/img4tool
+    cd temp/img4tool
+    ./autogen.sh
+    make
+    sudo make uninstall
+    cd ../..
+
+    echo -e "\033[32mUninstalling libpartialzip...\033[0m"
+    git clone https://github.com/tihmstar/libpartialzip.git temp/libpartialzip
+    cd temp/libpartialzip
+    ./autogen.sh
+    make
+    sudo make uninstall
+    cd ../..
+
+    echo -e "\033[32mUninstalling tsschecker...\033[0m"
+    git clone --recursive https://github.com/tihmstar/tsschecker.git temp/tsschecker
+    cd temp/tsschecker
+    ./autogen.sh
+    make
+    sudo make uninstall
+    cd ../..
+
+    echo -e "\033[32mRemoving ~/.tools and /etc/paths.d/tools...\033[0m"
+    rm -rf ~/.tools
+    sudo rm -f /etc/paths.d/tools
+
+    echo -e "\033[32mUninstallation complete!\033[0m"
+    exit 0
+fi
 
 mkdir ~/.tools
 mkdir temp

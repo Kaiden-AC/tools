@@ -10,17 +10,33 @@ if [ "$1" == "--uninstall" ]; then
     sudo make uninstall
     cd ../..
 
+    # echo -e "\033[32mUninstalling partialZipBrowser...\033[0m"
+    # git clone https://github.com/tihmstar/partialZipBrowser.git temp/partialZipBrowser
+    # cd temp/partialZipBrowser
+    # ./autogen.sh
+    # make
+    # sudo make uninstall
+    # cd ../..
+
+    # echo -e "\033[32mUninstalling libpartialzip...\033[0m"
+    # git clone https://github.com/tihmstar/libpartialzip.git temp/libpartialzip
+    # cd temp/libpartialzip
+    # ./autogen.sh
+    # make
+    # sudo make uninstall
+    # cd ../..
+
+    # echo -e "\033[32mUninstalling libcrippy...\033[0m"
+    # git clone https://github.com/tihmstar/libcrippy.git temp/libcrippy
+    # cd temp/libcrippy
+    # ./autogen.sh
+    # make
+    # sudo make uninstall
+    # cd ../..
+
     echo -e "\033[32mUninstalling img4tool...\033[0m"
     git clone https://github.com/tihmstar/img4tool.git temp/img4tool
     cd temp/img4tool
-    ./autogen.sh
-    make
-    sudo make uninstall
-    cd ../..
-
-    echo -e "\033[32mUninstalling libpartialzip...\033[0m"
-    git clone https://github.com/tihmstar/libpartialzip.git temp/libpartialzip
-    cd temp/libpartialzip
     ./autogen.sh
     make
     sudo make uninstall
@@ -143,15 +159,15 @@ cd ../..
 # sudo make install
 # cd ../..
 
-echo -e "\033[32mCloning libpartialzip...\033[0m"
-git clone https://github.com/tihmstar/libpartialzip.git temp/libpartialzip
+# echo -e "\033[32mCloning libpartialzip...\033[0m"
+# git clone https://github.com/tihmstar/libpartialzip.git temp/libpartialzip
 
-echo -e "\033[32mBuilding libpartialzip...\033[0m"
-cd temp/libpartialzip
-./autogen.sh
-make
-sudo make install
-cd ../..
+# echo -e "\033[32mBuilding libpartialzip...\033[0m"
+# cd temp/libpartialzip
+# ./autogen.sh
+# make
+# sudo make install
+# cd ../..
 
 # echo -e "\033[32mCloning partialZipBrowser...\033[0m"
 # git clone https://github.com/tihmstar/partialZipBrowser.git temp/partialZipBrowser

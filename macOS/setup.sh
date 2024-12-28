@@ -205,7 +205,7 @@ curl -LO https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/sourc
 curl -LO https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/seprmvr64lite.c
 
 echo -e "\033[32mBuilding seprmvr64lite...\033[0m"
-clng seprmvr64lite.c -o seprmvr64lite
+clang seprmvr64lite.c -o seprmvr64lite
 mv seprmvr64lite ~/.tools
 cd ../..
 

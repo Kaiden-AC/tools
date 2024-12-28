@@ -199,11 +199,12 @@ mv seprmvr64 ~/.tools
 cd ../..
 
 echo -e "\033[32mFetching seprmvr64lite...\033[0m"
+mkdir temp/seprmvr64lite
+cd temp/seprmvr64lite
 curl -O https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/patchfinder64.c
 curl -O https://github.com/Agricu/ios7.iarchive.app/raw/refs/heads/master/source/seprmvr64lite.c
 
 echo -e "\033[32mBuilding seprmvr64lite...\033[0m"
-cd temp/seprmvr64lite
 gcc seprmvr64lite.c -o seprmvr64lite
 mv seprmvr64lite ~/.tools
 cd ../..

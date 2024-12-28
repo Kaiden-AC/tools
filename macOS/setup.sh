@@ -2,13 +2,13 @@
 set -e
 
 if [ "$1" == "--uninstall" ]; then
-    echo -e "\033[32mUninstalling tsschecker...\033[0m"
-    git clone --recursive https://github.com/tihmstar/tsschecker.git temp/tsschecker
-    cd temp/tsschecker
-    ./autogen.sh
-    make
-    sudo make uninstall
-    cd ../..
+    # echo -e "\033[32mUninstalling tsschecker...\033[0m"
+    # git clone --recursive https://github.com/tihmstar/tsschecker.git temp/tsschecker
+    # cd temp/tsschecker
+    # ./autogen.sh
+    # make
+    # sudo make uninstall
+    # cd ../..
 
     # echo -e "\033[32mUninstalling partialZipBrowser...\033[0m"
     # git clone https://github.com/tihmstar/partialZipBrowser.git temp/partialZipBrowser
@@ -207,15 +207,15 @@ gcc seprmvr64lite.c -o seprmvr64lite
 mv seprmvr64lite ~/.tools
 cd ../..
 
-echo -e "\033[32mCloning tsschecker...\033[0m"
-git clone --recursive https://github.com/tihmstar/tsschecker.git temp/tsschecker
+# echo -e "\033[32mCloning tsschecker...\033[0m"
+# git clone --recursive https://github.com/tihmstar/tsschecker.git temp/tsschecker
 
-echo -e "\033[32mBuilding tsschecker...\033[0m"
-cd temp/tsschecker
-./autogen.sh
-make
-sudo make install
-cd ../..
+# echo -e "\033[32mBuilding tsschecker...\033[0m"
+# cd temp/tsschecker
+# ./autogen.sh
+# make
+# sudo make install
+# cd ../..
 
 echo -e "\033[32mAdding ~/.tools to system path...\033[0m"
 sudo echo "/Users/$(whoami)/.tools" >> /etc/paths.d/tools

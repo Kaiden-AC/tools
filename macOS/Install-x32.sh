@@ -16,6 +16,9 @@ fi
 mkdir ~/.tools
 mkdir temp
 
+echo -e "\033[32mInstalling dependencies...\033[0m"
+brew install cmake libcrypto libpng openssl
+
 echo -e "\033[32mCloning xpwn...\033[0m"
 git clone https://github.com/Kaiden-AC/xpwn.git temp/xpwn
 

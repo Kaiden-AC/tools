@@ -36,7 +36,7 @@ git clone https://github.com/dora2ios/iBoot32Patcher.git temp/iBoot32Patcher
 
 echo -e "\033[32mBuilding iBoot32Patcher...\033[0m"
 cd temp/iBoot32Patcher
-clang iBoot32Patcher.c finders.c functions.c patchers.c -Wno-multichar -I. -o iBoot32Patcher
+clang iBoot32Patcher.c finders.c functions.c patchers.c -Wno-multichar -Wno-int-conversion -I. -o iBoot32Patcher
 mv iBoot32Patcher ~/.tools
 cd ../..
 

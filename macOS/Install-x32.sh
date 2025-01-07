@@ -28,7 +28,7 @@ mkdir xpwn-build
 cd xpwn-build
 cmake ..
 make
-mv dmg/dmg hfs/hfsplus ipsw-patch/xpwntool ~/.tools
+mv dmg/dmg hfs/hfsplus ipsw-patch/ipsw ipsw-patch/xpwntool ~/.tools
 cd ../..
 
 echo -e "\033[32mCloning iBoot32Patcher...\033[0m"
